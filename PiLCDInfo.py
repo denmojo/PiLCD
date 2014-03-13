@@ -107,7 +107,7 @@ class PiLCDInfo:
             self.check_price()
             self.last_check = time.time()
 
-        self.screen1 = 'IP: ' + self.get_ipaddress()
+        self.screen1[0] = 'IP: ' + self.get_ipaddress()
 
         self.screen2[0] = 'last: %s' % self.price_last
         self.screen2[1] = 'H' + self.price_high + ' L' + self.price_low
