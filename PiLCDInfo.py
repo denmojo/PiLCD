@@ -71,12 +71,10 @@ class PiLCDInfo:
     def check_price(self):
         try:
             url = 'https://www.bitstamp.net/api/ticker/'
-
             f = urllib.urlopen(url)
         except Exception as e:
             self.report_error(e)
             return None
-        data = None
         price_high = None
         price_low = None
         price_last = None
@@ -92,9 +90,6 @@ class PiLCDInfo:
                 price_high = prices_json['high']
                 price_last = prices_json['last']
                 price_low = prices_json['low']
-            else:
-                if prices_json and prices_json['result'] == 'success':
-                    data = prices_json['data']
 
         self.price_last = '$' + price_last if price_last else '-'
         self.price_low = price_low if price_low else '-'

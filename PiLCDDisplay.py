@@ -27,14 +27,14 @@ class PiLCDDisplay:
         self.info = PiLCDInfo()
         self.dispLocalInfo()
 
-    #Display Local Info - Accepted, Rejected, HW Errors \n Average Hashrate
+    #Display Local Info - IP Address
     def dispLocalInfo(self):
         self.dispScreen(self.info.screen1)
 
-        # Display rewards & price
+        # Display bitstamp price
 
     def dispValueInfo(self):
-        self.dispScreen(self.info.screen5)
+        self.dispScreen(self.info.screen2)
 
     #Send text to display
     def dispScreen(self, newScreen):
@@ -46,7 +46,7 @@ class PiLCDDisplay:
             self.lcd.message(s)
         except TypeError:
             self.lcd.clear()
-            self.lcd.message('connecting\nto cgminer ...')
+            self.lcd.message('connecting ...')
 
 
     #Cycle Backlight Color / On/Off
