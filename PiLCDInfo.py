@@ -87,30 +87,14 @@ class PiLCDInfo:
     def refresh(self):
         now = time.time()
         since = now - self.last_check
+        ip_address = self.get_ipaddress()
         if since >= self.price_wait:
             self.check_price()
             self.last_check = time.time()
 
         self.screen1[0] = 'IP:'
-        self.screen1[1] = self.get_ipaddress()
+        self.screen1[1] = (ip_address[:15]) if len(ip_address) > 15 else ip_address
 
         self.screen2[0] = 'last: %s' % self.price_last
         self.screen2[1] = 'H' + self.price_high + ' L' + self.price_low
-
-
-'''        s = self.cg_rpc(self.host, self.port, 'summary')
-        self.screen1 = self.parse_summary(s)
-
-        s = self.cg_rpc(self.host, self.port, 'pools')
-        self.screen3 = self.parse_pools(s)
-
-        s = self.cg_rpc(self.host, self.port, 'config')
-        self.screen2[0] = self.parse_config(s)
-        s = self.cg_rpc(self.host, self.port, 'coin')
-        self.screen4[1] = self.parse_coin(s)
-
-        self.screen4[0] = 'time: %s' % self.uptime
-        self.screen2[1] = 'error: %.2f%%' % self.errRate
-'''
-
 
