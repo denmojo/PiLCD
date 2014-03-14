@@ -71,13 +71,13 @@ class PiLCDDisplay:
     #Display next info screen
     def modeUp(self):
         self.mode += 1
-        if self.mode > 2: self.mode = 0
+        if self.mode > 1: self.mode = 0
         self.update()
 
     #Display previous info screen
     def modeDown(self):
         self.mode -= 1
-        if self.mode < 0: self.mode = 2
+        if self.mode < 0: self.mode = 1 # Add more screens for more functionality
         self.update()
 
     #Update display
@@ -86,7 +86,5 @@ class PiLCDDisplay:
         if self.mode == 0:
             self.dispLocalInfo()
         elif self.mode == 1:
-            self.dispLocalInfo()
-        elif self.mode == 2:
             self.dispValueInfo()
 
