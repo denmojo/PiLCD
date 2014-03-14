@@ -57,17 +57,6 @@ class PiLCDInfo:
         self.report_error(s)
         return self.ipaddr
 
-
-    def conv_prio_dict(self, p):
-        if isinstance(p, (tuple, list, )):
-            try:
-                pd = dict(p)
-            except TypeError:
-                pd = zip(p, range(len(p)))
-            return pd
-        if isinstance(p, dict): return p
-        return {}
-
     def check_price(self):
         try:
             url = 'https://www.bitstamp.net/api/ticker/'
@@ -102,7 +91,8 @@ class PiLCDInfo:
             self.check_price()
             self.last_check = time.time()
 
-        self.screen1[0] = 'IP: ' + self.get_ipaddress()
+        self.screen1[0] = 'IP:'
+        self.screen1[1] = self.get_ipaddress()
 
         self.screen2[0] = 'last: %s' % self.price_last
         self.screen2[1] = 'H' + self.price_high + ' L' + self.price_low
