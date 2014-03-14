@@ -1,13 +1,15 @@
 PiLCD v1.0
 =======
 
-Python scripts for interfacing with the Adafruit 16x2 LCD + Keypad Kit for Raspberry Pi.
+Python scripts for interfacing with the [Adafruit 16x2 LCD + Keypad Kit](http://learn.adafruit.com/adafruit-16x2-character-lcd-plus-keypad-for-raspberry-pi/overview) for Raspberry Pi.
 
 Adafruit invests time and resources providing this open source code, please support Adafruit and open-source hardware by purchasing products from Adafruit!
 
 Written by Dennis Mojado and based on code by Collin Cunningham for Adafruit Industries. BSD license, all text above must be included in any redistribution
 
-To download, log into your Pi with Internet accessibility and type: git clone https://github.com/denmojo/PiLCD.git
+This project depends on [configuring your Pi for i2c](http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) and having installed the [Adafruit Raspberry Pi Python Code](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code) in the pi user home directory (See line 5 of PiLCD.py to change Adafruit path).
+
+To download this project, log into your Pi with Internet accessibility and type: git clone https://github.com/denmojo/PiLCD.git
 
 
 Configure Auto-start
