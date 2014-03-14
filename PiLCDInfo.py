@@ -5,19 +5,10 @@ import urllib
 import json
 import time
 
-
 class PiLCDInfo:
     host = ''
-    port = 4028
-    errRate = 0.0
-    accepted = 0.0
-    hw = 0.0
-    diff1shares = 0.0
-    uptime = ''
     screen1 = ['no data', 'no data']
     screen2 = ['no data', 'no data']
-    currency = 'USD'  # USD GBP EUR JPY AUD CAD CHF CNY DKK HKD PLN RUB SEK SGD THB NOK CZK
-    dollars = ['USD', 'AUD', 'CAD']  # currencies with displayable symbols
     last_check = time.time()  # time of last price check
     price_wait = 60.0  # interval between price checks
     price_last = '-'  # last price via mtgox

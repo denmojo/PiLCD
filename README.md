@@ -9,7 +9,7 @@ Written by Dennis Mojado and based on code by Collin Cunningham for Adafruit Ind
 
 This project depends on [configuring your Pi for i2c](http://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c) and having installed the [Adafruit Raspberry Pi Python Code](https://github.com/adafruit/Adafruit-Raspberry-Pi-Python-Code) in the pi user home directory (See line 5 of PiLCD.py to change Adafruit path).
 
-Oh yeah, this code also displays secondary screen info (down button) of Bitstamp's bitcoin price ticker. This refreshes every 3 seconds. I left this in here because I find it personally useful, but can also be a template for accessing other JSON-based API data.
+Oh yeah, this code also displays secondary screen info (down button) of Bitstamp's bitcoin price ticker. This refreshes every 60 seconds. I left this in here because I find it personally useful, but can also be a template for accessing other JSON-based API data.
 
 To download this project, log into your Pi with Internet accessibility and type: git clone https://github.com/denmojo/PiLCD.git
 
