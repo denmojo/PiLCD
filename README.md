@@ -16,7 +16,7 @@ To download this project, log into your Pi with Internet accessibility and type:
 
 Configure Auto-start
 -------------
-In order for this code to be helpful on startup, it should run when the Pi is powered on.
+This code is meant to show the Pi's address on the display when powered on.
 
 To do this, you must add the following lines ABOVE "exit 0" in the Pi's /etc/rc.local
 
